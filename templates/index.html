@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Localstack Management{% endblock %}
+
+{% block content %}
+
+<h2>Localstack Management Services</h2>
+
+<strong>Available services:</strong>
+
+<div class="container">
+  <div class="row">
+    <a href="/sqsList">
+      <div class="card" style="width: 10rem; margin-left: 2rem">
+        <img src="static/images/sqs.png" class="card-img-top" alt="sqs">
+        <div class="card-body">
+          <p class="card-text">SQS</p>
+        </div>
+      </div>
+    </a>
+    <a href="/ddbList">
+      <div class="card" style="width: 10rem;margin-left: 2rem">
+        <img src="static/images/dynamodb.png" class="card-img-top" alt="DynamoDB">
+        <div class="card-body">
+          <p class="card-text">DynamoDB</p>
+        </div>
+      </div>
+    </a>
+    <a href="/s3List">
+      <div class="card" style="width: 10rem;margin-left: 2rem">
+        <img src="static/images/s3.png" class="card-img-top" alt="S3">
+        <div class="card-body">
+          <p class="card-text">S3</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}

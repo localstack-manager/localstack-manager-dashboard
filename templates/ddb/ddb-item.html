@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}SQS Management{% endblock %}
+
+{% block content %}
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+
+<h2>DynamoDB Tables</h2>
+<a href="/ddbList" class="alert-link">List Tables</a> /
+<a href="/ddbListItems" class="alert-link">List Items</a>
+<hr />
+
+<div class="form-inline">
+	<div class="form-group mx-sm-3 mb-2">
+		<label class="form-check-label" for="tableNameId">Table name: &nbsp;</label>
+		<label id="tableNameId" class="font-weight-bold text-uppercase" for="tableNameId">{{table_name}}</label>
+    </div>
+	
+	<div class="form-group mx-sm-3 mb-2">
+		<a href="/ddbCreateTable" class="btn btn-outline-primary" role="button" aria-disabled="true">Save</a>
+	</div>
+	
+	<div class="form-group mx-sm-3 mb-2">
+		<a href="/ddbCreateTable" class="btn btn-outline-danger" role="button" aria-disabled="true">Cancel</a>
+	</div>
+
+</div>
+
+<hr />
+<div class="">
+   <div id="editor" style="top: 220px; bottom: -300px;">
+   
+function foo(items) {
+	var x = "All this is syntax highlighted";
+	return x;
+}
+
+	</div> 
+
+</div>
+
+{% endblock %}
+
+{% block page_scripts %}
+
+<script src="static/js/acejs/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="static/js/acejs/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+<script src="static/js/acejs/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    var editor = ace.edit("editor");
+	ace.require("ace/edit_session").EditSession.prototype.$startWorker = function(){};
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+</script>
+
+{% endblock %}
+

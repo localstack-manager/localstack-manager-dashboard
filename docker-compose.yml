@@ -1,0 +1,29 @@
+version: '2.1'
+
+services:
+  db:
+    image: instructure/dynamo-local-admin
+    container_name: dynamo-admin-localstack-manager
+    ports:
+    - "8000:8000"
+    environment:
+    - AWS_ACCESS_KEY_ID=key
+    - AWS_SECRET_ACCESS_KEY=secret
+  localstack:
+    image: localstack/localstack
+    container_name: aws-localstack-manager
+    ports:
+      - "4567-4584:4567-4584"
+      - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
+    environment:
+      - SERVICES=s3:4572,sns:4575,sqs:4576,lambda:4574
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - HOSTNAME_EXTERNAL=aws-localstack
+      - DEBUG=${DEBUG- }
+      - DATA_DIR=${DATA_DIR- }
+      - PORT_WEB_UI=${PORT_WEB_UI- }
+      - LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR- }
+      - KINESIS_ERROR_PROBABILITY=${KINESIS_ERROR_PROBABILITY- }
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>aws-localstack-manager</title>
+
+</head>
+
+<body class="grey lighten-3">
+  <h2>aws-localstack-manager</h2>
+  
+  Queue Name: <input type="text" id="queueNameId" >
+  <input type="button" onclick="list_messages()" value="Filter">
+  <hr/>
+  
+  <table id='sqsTableId'>
+  <thead>
+    <tr>
+      <th>Message Id</th>
+      <th>Message Body</th>
+      <th>Delete Message</th>
+    </tr>
+  </thead>
+  <tbody>
+     
+  </tbody>
+</table>
+  
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  
+    list_messages();
+    window.setInterval(function(){
+      list_messages();
+    }, 10000);
+  
+  function list_messages(queueName){
+      $('#sqsTableId tbody').empty();
+      var queueName = $('#queueNameId').val(); 
+      var url = 'http://localhost:5000/sqs?queueName='+queueName;
+
+      $.getJSON(url, function (data) {
+        if(data && data.length > 0)
+          for(index in data){
+            message = data[index];
+            rowContent = '<tr><td>'+message.id+'</td><td>'+message.body+'</td><td>x</td></tr>';
+            $("#sqsTableId tbody").append(rowContent);
+          }
+        
+        console.log(data);          
+      }, function (err) {
+        console.log('Error:', err);          
+      });
+    }
+  </script>
+
+</html>

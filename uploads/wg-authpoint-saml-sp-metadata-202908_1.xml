@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://sp.authpoint.cloud.watchguard.com/WGC-1-fbcb25f6f9f5407ba4e2">
+    <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol">
+        <md:KeyDescriptor use="signing">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIFQDCCAyigAwIBAgIUAZFjL1dk2GvnuJS5BfiyilNlqX8wDQYJKoZIhvcNAQEN
+BQAwWjELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAldBMRAwDgYDVQQHDAdTZWF0dGxl
+MRMwEQYDVQQKDApXYXRjaGd1YXJkMRcwFQYDVQQDDA53YXRjaGd1YXJkLmNvbTAe
+Fw0xOTA4MjIxODMwMzlaFw0yOTA4MjIxODMwMzlaMFoxCzAJBgNVBAYTAlVTMQsw
+CQYDVQQIDAJXQTEQMA4GA1UEBwwHU2VhdHRsZTETMBEGA1UECgwKV2F0Y2hndWFy
+ZDEXMBUGA1UEAwwOd2F0Y2hndWFyZC5jb20wggIiMA0GCSqGSIb3DQEBAQUAA4IC
+DwAwggIKAoICAQDNIqpL4o/rX5VLesKpIDItPZTyeYVpuRTs9Scv1tPOEW8mQGKO
+Ckqkn30SK8/vnkBu347dyDUjg0af0RcBKoLJennic0WQ0bCh7jgCChdtQ/Z+2AIg
+iI/Gik4miqKRTECNAFIyJYB+VcsbzdxCbJ1ivZb2qKeQazfbC1NUg0+wcAApe5h5
+kwHzleDBMxw6iZH+GwleZEGIbHipqi5cLEBEvX9Sgoq1hwKqya6nQ0y/+V1AMGFT
+FbBnQb+lKrAqW+e1mNaOmUPr2vwzJcD0Nl7zhen/INfV5lbour4dK1Bz6KjrOL6Q
+r9KFIZG4x197Sz/PMHprZ4TE7ujnrlFP6Sbn1CbSZmqsz3rnaL0sfErerfAu8G5S
+6rv2nk5FYFSKM8gtlHtsEmzP33DIxOGdzz9e2g8dqJpQk/CvdA7Bszmq/RyWjEx9
+WxhkZkyqn42aUfDgOrf2fp2bORro49e5rNNXeuNCCB4YWJzIRLZYo9AVlPpgs2V8
+7uPX9eWPp9vjDrOj8+wginC1CGtye7dl/KJcfqR9Utj1NntsWW4X0BCjJbqRidSG
+bnQvRIGM1Glr7Ma1hYB7Kok/ME95BnYYAR+lcGhzArpHa//nskLXBzn32gy4qSJ/
+UlKhBcfRpZ0xbGKYSGRgvwxsSYvLUBXUcU+AscaCTUgfr8e06xt2eAWTGQIDAQAB
+MA0GCSqGSIb3DQEBDQUAA4ICAQAnz26pBV8Z0B3ZX2jXTEVwZDhvJiiKZQ93L9N4
+3Udnm/XCWaV1e40aS66r5qnkZkvl3ypVJ6uQ3tMCSIEXFz4YS2RoF7SBvy/NdHbp
+V9hTiNEkPTHbtIV88L1Evcct4Zy/0Mse2jhADuA7hXoQ0un5g2GgFO8Jm8blsILv
+ndIr+4F92SX86xIcN1Py2p5ZbZiSn5meZ1jsrQnb33RW1ruge18EN6keFbdYDXMN
+Ogdn0WOEvXVd8fLsItwnXEXVoZW5MfqKiAj6R3nFu3xc48ChMcEY/JyxkPZhCAwl
+kJNTG28bzxVbCLoremnzt+Ame3s6eyDRSCiV2rVr0Xpj4SbcEnsdHiB451dYef3G
+ojzKmYWgSDBNtTwQ4hrFcYybrSpMuCJkKlbcTTkGzBfccV9WgxacodSSxMjKNOMc
+AjOI8syJufqo7fdroHytYOComxKHUROuNHbz8Lix9Ew73qC+GeAy651fN6RXP6N2
+YWuSV1ZU/DGwOLZPDhTWC1tPTRcSi4ngRTb91iDVIFF6nik6wUpDLd9ZrsZPR+VQ
+mvi79GaAfUa5vbUHH7TjZ4tJ7RQeOcVLhdGrVV4NS2cIAg5djJkv7a/EHRC3KPWa
+pCS1x4lWzX3KP+jVnnBSgLAe+9tyM2qrX7fdSdvghFIQHUOZ9t7i0bXGth3JZ0QO
+9lta1Q==
+</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev.sp.authpoint.usa.cloud.watchguard.com/saml/WGC-1-fbcb25f6f9f5407ba4e2/slo/spinit"/>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dev.sp.authpoint.usa.cloud.watchguard.com/saml/WGC-1-fbcb25f6f9f5407ba4e2/slo/spinit"/>
+        <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev.sp.authpoint.usa.cloud.watchguard.com/saml/WGC-1-fbcb25f6f9f5407ba4e2/sso/spinit"/>
+        <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dev.sp.authpoint.usa.cloud.watchguard.com/saml/WGC-1-fbcb25f6f9f5407ba4e2/sso/spinit"/>
+    </md:IDPSSODescriptor>
+</md:EntityDescriptor>

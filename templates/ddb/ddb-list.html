@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}SQS Management{% endblock %}
+
+{% block content %}
+<h2>DynamoDB Tables</h2>
+<a href="/ddbList" class="alert-link">List Tables</a> /
+<a href="/ddbListItems" class="alert-link">List Items</a>
+<hr />
+
+<div class="form-inline">
+	<div class="form-group">
+		<a href="/ddbCreateTable" class="btn btn-outline-primary" role="button" aria-disabled="true">Create Table</a>
+	</div>
+</div>
+<hr />
+<div class="table-responsive">
+    
+    <table id="ddbListTablesId" class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Table Name (click to view items)</th>
+				<th>Count</th>
+				<th>Size</th>
+				<th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+	list_tables();
+</script>
+{% endblock %}
+
