@@ -122,3 +122,5 @@ docker run -p 8000:8000 -it --rm instructure/dynamo-local-admin
 https://rmsol.de/2018/05/10/Localstack/
 
 https://stackoverflow.com/questions/10180851/how-to-get-all-messages-in-amazon-sqs-queue-using-boto-library-in-python
+
+https://stackoverflow.com/questions/51669527/run-flask-cli-command-with-pycharm-debugger
