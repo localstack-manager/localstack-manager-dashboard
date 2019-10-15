@@ -8,6 +8,10 @@ def create_sqs_resource():
     return boto3.resource('sqs', endpoint_url=SQS_ENDPOINT, region_name='us-west-2')
 
 
+def create_sqs_client():
+    return boto3.client('sqs', endpoint_url=SQS_ENDPOINT, region_name='us-west-2')
+
+
 def list_messages(queue_name):
     sqs = create_sqs_resource()
     queue = sqs.get_queue_by_name(QueueName=queue_name)
@@ -44,6 +48,11 @@ def list_queues():
 def add_queue(queue_name):
     sqs = create_sqs_resource()
     queue = sqs.create_queue(QueueName=queue_name)
+
+
+def delete_queue(queue_url):
+    sqs = create_sqs_client()
+    sqs.delete_queue(QueueUrl=queue_url)
 
 
 def add_message_to_queue(message, queue_name):

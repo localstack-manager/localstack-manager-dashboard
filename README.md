@@ -124,3 +124,5 @@ https://rmsol.de/2018/05/10/Localstack/
 https://stackoverflow.com/questions/10180851/how-to-get-all-messages-in-amazon-sqs-queue-using-boto-library-in-python
 
 https://stackoverflow.com/questions/51669527/run-flask-cli-command-with-pycharm-debugger
+
+https://stackoverflow.com/questions/52049163/run-flask-app-in-pycharm-community-windows-10

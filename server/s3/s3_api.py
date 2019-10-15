@@ -18,6 +18,18 @@ def add_s3_bucket():
     return jsonify("{'bucket added' : '" + bucket_name + "'}")
 
 
+@s3_api.route("/api/s3DeleteBucket")
+def delete_s3_bucket():
+    print("====================================================")
+    bucket_name = request.args.get('bucketName')
+    if not bucket_name:
+        return 'bucket_name not informed'
+    print('delete bucket_name:{}'.format(bucket_name))
+
+    s3_service.delete_bucket(bucket_name)
+    return jsonify("{'bucket deleted' : '" + bucket_name + "'}")
+
+
 @s3_api.route("/api/s3ListBuckets")
 def list_s3_buckets():
     print("====================================================")

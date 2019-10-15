@@ -51,3 +51,14 @@ def add_sqs_message():
     print('add message:{}'.format(message))
     sqs_service.add_message_to_queue(message, queue_name)
     return jsonify("{'message added to queue' : '" + queue_name + "'}")
+
+@sqs_api.route("/api/sqsDeleteQueue")
+def delete_sqs_queue():
+    print("====================================================")
+    queue_url = request.args.get('queueName')
+    if not queue_url:
+        return 'queue url not informed'
+
+    print('add queue_url:{}'.format(queue_url))
+    sqs_service.delete_queue(queue_url)
+    return jsonify("{'queue deleted' : '" + queue_url + "'}")

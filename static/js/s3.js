@@ -11,7 +11,7 @@ function list_buckets() {
                 message = data[index];
                 rowContent = '<tr>'
                     + '<td><a href="/s3ListFiles?bucketName='+message+'">' + message + '</a></td>'
-                    + '<td><a href="#">Delete</a></td>'
+                    + '<td><a href="#" onclick="deleteBucket(\''+message+'\')">Delete</a></td>'
                     + '</tr>';
                 $("#s3ListBucketsTableId tbody").append(rowContent);
             }
@@ -62,3 +62,18 @@ function addBucket() {
     });
 }
 
+
+function deleteBucket(bucketName){
+    console.log("delete bucket: ", bucketName);
+
+    var url = BASE_API_URL + 's3DeleteBucket?bucketName=' + bucketName;
+    fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            console.log(data);
+            list_buckets();
+          })
+          .catch(function(error) {
+            alert(error);
+          });
+}
