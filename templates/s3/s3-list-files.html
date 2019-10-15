@@ -3,10 +3,14 @@
 {% block title %}SQS Management{% endblock %}
 
 {% block content %}
-<h2>S3 Buckets</h2>
-<a href="/s3List" class="alert-link">List Buckets</a> /
-<a href="/s3ListFiles" class="alert-link">List Files</a>
-<hr />
+<h3>S3 Buckets</h3>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/s3List" class="alert-link">List Buckets</a></li>
+        <li class="breadcrumb-item active" aria-current="page">List Files</li>
+    </ol>
+</nav>
 
 <div class="form-inline">
     <div class="form-group mx-sm-3 mb-2">
