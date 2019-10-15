@@ -11,9 +11,10 @@ function list_queues() {
         if (data && data.length > 0)
             for (index in data) {
                 message = data[index];
+                queueName = extratQueueName(message);
                 rowContent = '<tr>'
-                    + '<td><a href="/sqsMessages?queueName='+extratQueueName(message)+'">' + message + '</a></td>'
-                    + '<td><a href="#">Delete</a></td>'
+                    + '<td><a href="/sqsMessages?queueName='+queueName +'">' + message + '</a></td>'
+                    + '<td><a href="#" onclick="deleteQueue(\''+message+'\')">Delete</a></td>'
                     + '</tr>';
                 tableBodySelector.append(rowContent);
             }
@@ -88,4 +89,19 @@ function addQueue() {
     }, function (err) {
         console.log('Error:', err);
     });
+}
+
+function deleteQueue(queueName){
+    console.log("delete queue: ", queueName);
+
+    var url = BASE_API_URL + 'sqsDeleteQueue?queueName=' + queueName;
+    fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            console.log(data);
+            list_queues();
+          })
+          .catch(function(error) {
+            alert(error);
+          });
 }

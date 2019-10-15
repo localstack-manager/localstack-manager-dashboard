@@ -56,6 +56,11 @@ def add_bucket(bucket_name):
     s3.create_bucket(Bucket=bucket_name)
 
 
+def delete_bucket(bucket_name):
+    s3 = create_s3_client()
+    s3.delete_bucket(Bucket=bucket_name)
+
+
 if __name__ == '__main__':
     # print(list_buckets())
     print(list_files(list_buckets()[0]))
