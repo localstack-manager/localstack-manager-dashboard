@@ -3,10 +3,15 @@
 {% block title %}SQS Management{% endblock %}
 
 {% block content %}
-<h2>Sqs Queues</h2>
-<a href="/sqsList" class="alert-link">List Queues</a> /
-<a href="/sqsMessages" class="alert-link">List Messages</a>
-<hr />
+<h3>Sqs Queues</h3>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">List Queues</li>
+        <li class="breadcrumb-item" aria-current="page"><a href="/sqsMessages" class="alert-link">List Messages</a></li>
+    </ol>
+</nav>
+
 
 <div class="form-inline">
     <div class="form-group mx-sm-3 mb-2">
