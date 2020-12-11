@@ -16,7 +16,7 @@ pip install virtualenv
 - Linux
 ```
 python3 -m venv venv
-source env/bin/activate
+source venv/bin/activate
 ```
 
 - Windows:
